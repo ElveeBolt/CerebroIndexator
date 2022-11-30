@@ -1,0 +1,4 @@
+autopep8==2.0.0
+elasticsearch==8.5.1
+alive-progress==2.4.1
+tabulate==0.9.0
