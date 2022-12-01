@@ -40,10 +40,9 @@ class Core:
         :return: list of file
         """
         files = os.listdir(path)
-        return [os.path.join(path, file) for file in files if file.split('_')[
-            0] == COLLECTION_PREFIX]
+        return [os.path.join(path, file) for file in files if file.split('_')[0] == COLLECTION_PREFIX]
 
-    def update_document(self, document: dict, config: dict) -> dict | None:
+    def update_document(self, document: dict, config: dict) -> dict:
         """
         Update current document.
         Add current date and index database name
