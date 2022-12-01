@@ -49,8 +49,7 @@ class Create(Elastic, Core):
                     documents.append(document)
 
                     if i % PACKAGE_SIZE == 0 or i == size:
-                        self.put_document_bulk(
-                            index=index, documents=documents)
+                        self.put_documents(index=index, documents=documents)
                         documents.clear()
 
                 bar()

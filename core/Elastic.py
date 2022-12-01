@@ -1,5 +1,3 @@
-import elasticsearch
-
 from settings import *
 from elasticsearch import Elasticsearch, exceptions, helpers
 
@@ -60,17 +58,7 @@ class Elastic:
         """
         return self._client.indices.exists(index=index)
 
-    def put_document(self, index: str, document: dict):
-        """
-        Put document to created indeces
-
-        :param index: index name
-        :param document: document
-        :return:
-        """
-        return self._client.index(index=index, document=document)
-
-    def put_document_bulk(self, index: str, documents: list):
+    def put_documents(self, index: str, documents: list):
         """
         Put documents packages. Size of packages is equals
         PACKAGES_SIZE from settings.py
@@ -79,7 +67,4 @@ class Elastic:
         :param documents: list of documents
         :return:
         """
-        return helpers.bulk(
-            client=self._client,
-            index=index,
-            actions=documents)
+        return helpers.bulk(client=self._client, index=index, actions=documents)
