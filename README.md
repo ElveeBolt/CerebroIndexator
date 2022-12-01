@@ -50,6 +50,18 @@ ELASTIC_USERNAME = 'elastic'
 ELASTIC_PASSWORD = 'O11J4soaIrTTUUQhT9Vp'
 ```
 
+Get fingerprint from ElasticSearch server:
+```bash
+sudo openssl x509 -fingerprint -sha256 -noout -in /etc/elasticsearch/certs/http_ca.crt
+```
+
+If you forget password for elastic user, please reset password with these commands:
+```bash
+cd /usr/share/elasticsearch/bin
+sudo ./elasticsearch-reset-password -u elastic
+```
+To see more, please visit - [www.elastic.co]( https://www.elastic.co/guide/en/elasticsearch/reference/current/reset-password.html)
+
 ## Run app
 ```bash
 python main.py
