@@ -13,7 +13,7 @@ CONFIG = 'config.json'
 COLLECTION_PREFIX = 'collection'
 
 # Format date to update document
-DATETIME_FORMAT = '%d.%m.%Y %H:%M:%S'
+DATETIME_FORMAT = '%d.%m.%Y %H:%M'
 
 PACKAGE_SIZE = 10000
 
