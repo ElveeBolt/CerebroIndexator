@@ -25,7 +25,8 @@ class Elastic:
 
         :return: info indices
         """
-        return self._client.cat.indices(format='json')
+        indexes = self._client.cat.indices(format='json')
+        return sorted(indexes, key=lambda item: item['index'])
 
     def create_index(self, index: str, mappings: dict):
         """
